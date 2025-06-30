@@ -1,26 +1,88 @@
-@import "tailwindcss";
-
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111111;
+  --link-hover: #0a66c2;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #eeeeee;
+  --link-hover: #3399ff;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* spread left, center, right */
+  padding: 0 1rem;
+  height: 60px;
+  position: relative;
+}
+
+/* Theme toggle on left */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  color: inherit;
+}
+
+/* Center nav items */
+.navbar-items {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  justify-content: center; /* center horizontally */
+}
+
+.navbar-items li a {
+  cursor: pointer;
+  font-weight: normal;
+  padding: 0.5rem 1rem;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Right icons */
+.navbar-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-icons a {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.navbar-icons a:hover {
+  color: #0a66c2;
+}
+
+.typing-text {
+  font-family: 'Atma', monospace, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 40vh;
+}
+
+.blinking-cursor {
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
