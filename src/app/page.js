@@ -1,18 +1,24 @@
 "use client";
-import "./globals.css";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
-import TypingIntro from "./components/TypingIntro";
+import Home from "./components/Home";
+import AboutMe from "./components/AboutMe";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
-const commands = ["home", "about me", "projects", "contact"];
-
-export default function Home() {
-  const [selectedCommand, setSelectedCommand] = useState(null);
+export default function Page() {
+  const [selected, setSelected] = useState("home");
 
   return (
-    <main>
-      <Navbar items={commands} selected={selectedCommand} onSelect={setSelectedCommand} />
-      <TypingIntro />
-    </main>
+    <>
+      <Navbar selected={selected} onSelect={setSelected} />
+
+      <main>
+        {selected === "home" && <Home />}
+        {selected === "about me" && <AboutMe />}
+        {selected === "projects" && <Projects />}
+        {selected === "contact" && <Contact />}
+      </main>
+    </>
   );
 }

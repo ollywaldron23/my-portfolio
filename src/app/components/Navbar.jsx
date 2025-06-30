@@ -6,12 +6,6 @@ const Navbar = ({ selected, onSelect }) => {
 
     const navItems = ["home", "about me", "projects", "contact"];
 
-    const hrefMap = {
-    home: "/",
-   "about me": "/about",
-    projects: "/projects",
-    contact: "/contact",
-    };
 
   // On mount, check if user prefers dark mode or saved mode
   useEffect(() => {
@@ -47,18 +41,18 @@ const Navbar = ({ selected, onSelect }) => {
           <li
             key={item}
             tabIndex={0}
-            style={{ cursor: "pointer", fontWeight: selected === item ? "bold" : "normal" }}
+            style={{ fontWeight: selected === item ? "bold" : "normal" }}
             onClick={() => onSelect(item)}
             >
-            <a href={hrefMap[item]}>{item}</a>
-        </li>
+            {item}
+            </li>
         ))}
       </ul>
 
       {/* Right: Social Icons */}
       <div className="navbar-icons">
         <a
-          href="https://www.linkedin.com/in/yourprofile"
+          href="https://uk.linkedin.com/in/olly-waldron-044b23223"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -67,7 +61,7 @@ const Navbar = ({ selected, onSelect }) => {
         </a>
 
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/ollywaldron23"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
