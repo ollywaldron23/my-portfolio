@@ -60,10 +60,10 @@ const projects = [
 
 export default function Projects() {
   const [selected, setSelected] = useState(0);
-  const [loaded, setLoaded] = useState(false); 
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setLoaded(true), 300);  // trigger fade-in after 300ms
+    setTimeout(() => setLoaded(true), 300); // trigger fade-in after 300ms
   }, []);
 
   const project = projects[selected];

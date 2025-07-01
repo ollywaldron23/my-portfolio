@@ -4,13 +4,15 @@ import { useState, useEffect } from "react";
 const Navbar = ({ selected, onSelect }) => {
   const [isDark, setIsDark] = useState(false);
 
-    const navItems = ["home", "about me", "projects", "contact"];
-
+  const navItems = ["home", "about me", "projects", "contact"];
 
   // On mount, check if user prefers dark mode or saved mode
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark" || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (
+      savedTheme === "dark" ||
+      (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
       setIsDark(true);
       document.documentElement.setAttribute("data-theme", "dark");
     }
@@ -31,7 +33,11 @@ const Navbar = ({ selected, onSelect }) => {
   return (
     <nav className="navbar">
       {/* Left: Theme Toggle */}
-      <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle light/dark mode">
+      <button
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label="Toggle light/dark mode"
+      >
         {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
       </button>
 
@@ -43,9 +49,9 @@ const Navbar = ({ selected, onSelect }) => {
             tabIndex={0}
             style={{ fontWeight: selected === item ? "bold" : "normal" }}
             onClick={() => onSelect(item)}
-            >
+          >
             {item}
-            </li>
+          </li>
         ))}
       </ul>
 

@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 
-export default function TypingEffect({ text, speed = 100, as = "h1", className = "" }) {
+export default function TypingEffect({
+  text,
+  speed = 100,
+  as = "h1",
+  className = "",
+}) {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
 

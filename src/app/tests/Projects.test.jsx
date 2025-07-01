@@ -1,9 +1,9 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Projects from '../components/Projects';
-import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import Projects from "../components/Projects";
+import { describe, it, expect, vi } from "vitest";
 
 // Mock react-icons to simplify rendering
-vi.mock('react-icons/fa', () => ({
+vi.mock("react-icons/fa", () => ({
   FaGithub: () => <span data-testid="icon-github" />,
   FaReact: () => <span data-testid="icon-react" />,
   FaNodeJs: () => <span data-testid="icon-nodejs" />,
@@ -13,7 +13,7 @@ vi.mock('react-icons/fa', () => ({
   FaDatabase: () => <span data-testid="icon-database" />,
   FaExternalLinkAlt: () => <span data-testid="icon-external" />,
 }));
-vi.mock('react-icons/si', () => ({
+vi.mock("react-icons/si", () => ({
   SiMongodb: () => <span data-testid="icon-mongodb" />,
   SiExpress: () => <span data-testid="icon-express" />,
   SiPostgresql: () => <span data-testid="icon-postgresql" />,
@@ -21,8 +21,8 @@ vi.mock('react-icons/si', () => ({
   SiVite: () => <span data-testid="icon-vite" />,
 }));
 
-describe('Projects Component', () => {
-  it('renders project titles', () => {
+describe("Projects Component", () => {
+  it("renders project titles", () => {
     render(<Projects />);
     const titles = screen.getAllByText(/MakersBnB/);
     expect(titles.length).toBeGreaterThan(0);
@@ -30,48 +30,48 @@ describe('Projects Component', () => {
     expect(screen.getByText(/BanksyMap/)).toBeInTheDocument();
   });
 
-  it('shows details of first project by default', async () => {
+  it("shows details of first project by default", async () => {
     render(<Projects />);
     await waitFor(() =>
-      expect(screen.getByText(/Property rental platform/)).toBeInTheDocument()
+      expect(screen.getByText(/Property rental platform/)).toBeInTheDocument(),
     );
     expect(screen.getByText("12/05/2025 - 16/05/2025")).toBeInTheDocument();
   });
 
-  it('switches to Acebook project when clicked', async () => {
+  it("switches to Acebook project when clicked", async () => {
     render(<Projects />);
     const acebookTab = screen.getByText(/Acebook/);
     fireEvent.click(acebookTab);
 
     await waitFor(() =>
-      expect(screen.getByText(/Social media application/)).toBeInTheDocument()
+      expect(screen.getByText(/Social media application/)).toBeInTheDocument(),
     );
     expect(screen.getByText("05/06/2025 - 16/06/2025")).toBeInTheDocument();
   });
 
-  it('shows GitHub link if available', async () => {
+  it("shows GitHub link if available", async () => {
     render(<Projects />);
     await waitFor(() =>
-      expect(screen.getByRole('link', { name: /GitHub/i })).toHaveAttribute(
-        'href',
-        expect.stringContaining('github.com')
-      )
+      expect(screen.getByRole("link", { name: /GitHub/i })).toHaveAttribute(
+        "href",
+        expect.stringContaining("github.com"),
+      ),
     );
   });
 
-  it('does not show demo link when empty', async () => {
+  it("does not show demo link when empty", async () => {
     render(<Projects />);
     await waitFor(() =>
-      expect(screen.queryByText(/Demo/)).not.toBeInTheDocument()
+      expect(screen.queryByText(/Demo/)).not.toBeInTheDocument(),
     );
   });
 
-  it('renders project images with lazy loading', async () => {
+  it("renders project images with lazy loading", async () => {
     render(<Projects />);
     await waitFor(() => {
-      const images = screen.getAllByRole('img');
+      const images = screen.getAllByRole("img");
       expect(images.length).toBeGreaterThan(0);
-      expect(images[0]).toHaveAttribute('loading', 'lazy');
+      expect(images[0]).toHaveAttribute("loading", "lazy");
     });
   });
 });

@@ -42,7 +42,9 @@ describe("Contact Form", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
-    expect(console.warn).toHaveBeenCalledWith("Bot detected! Submission blocked.");
+    expect(console.warn).toHaveBeenCalledWith(
+      "Bot detected! Submission blocked.",
+    );
     expect(emailjs.send).not.toHaveBeenCalled();
   });
 
@@ -61,7 +63,7 @@ describe("Contact Form", () => {
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
     expect(global.alert).toHaveBeenCalledWith(
-      "I dont think that's your real name. Please shorten it to 40 characters or less."
+      "I dont think that's your real name. Please shorten it to 40 characters or less.",
     );
   });
 
@@ -79,7 +81,9 @@ describe("Contact Form", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
-    expect(global.alert).toHaveBeenCalledWith("Please enter a valid email address.");
+    expect(global.alert).toHaveBeenCalledWith(
+      "Please enter a valid email address.",
+    );
   });
 
   it("shows alert if message contains suspicious content", () => {
@@ -97,7 +101,7 @@ describe("Contact Form", () => {
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
     expect(global.alert).toHaveBeenCalledWith(
-      "Suspicious content detected in your message. Please remove links or scripts."
+      "Suspicious content detected in your message. Please remove links or scripts.",
     );
   });
 
@@ -145,7 +149,7 @@ describe("Contact Form", () => {
 
     await waitFor(() => {
       expect(global.alert).toHaveBeenCalledWith(
-        "Oops! Something went wrong. Please try again."
+        "Oops! Something went wrong. Please try again.",
       );
     });
   });

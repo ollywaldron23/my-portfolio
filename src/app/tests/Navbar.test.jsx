@@ -6,10 +6,9 @@ describe("Navbar", () => {
   const originalMatchMedia = window.matchMedia;
 
   beforeEach(() => {
-    
     localStorage.clear();
 
-    window.matchMedia = vi.fn().mockImplementation(query => {
+    window.matchMedia = vi.fn().mockImplementation((query) => {
       return {
         matches: false,
         media: query,
@@ -32,7 +31,9 @@ describe("Navbar", () => {
     render(<Navbar selected="home" onSelect={() => {}} />);
     expect(document.documentElement.getAttribute("data-theme")).toBeNull();
 
-    const button = screen.getByRole("button", { name: /toggle light\/dark mode/i });
+    const button = screen.getByRole("button", {
+      name: /toggle light\/dark mode/i,
+    });
     // Moon icon shows when light mode (not dark)
     expect(button.querySelector("svg")).toBeTruthy();
   });
@@ -43,13 +44,15 @@ describe("Navbar", () => {
     render(<Navbar selected="home" onSelect={() => {}} />);
     expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
 
-    const button = screen.getByRole("button", { name: /toggle light\/dark mode/i });
+    const button = screen.getByRole("button", {
+      name: /toggle light\/dark mode/i,
+    });
     // Sun icon shows when dark mode active
     expect(button.querySelector("svg")).toBeTruthy();
   });
 
   test("sets dark mode if no localStorage but prefers-color-scheme is dark", () => {
-    window.matchMedia = vi.fn().mockImplementation(query => ({
+    window.matchMedia = vi.fn().mockImplementation((query) => ({
       matches: query === "(prefers-color-scheme: dark)",
       media: query,
       addListener: vi.fn(),
@@ -65,7 +68,9 @@ describe("Navbar", () => {
 
   test("toggles theme on button click", () => {
     render(<Navbar selected="home" onSelect={() => {}} />);
-    const button = screen.getByRole("button", { name: /toggle light\/dark mode/i });
+    const button = screen.getByRole("button", {
+      name: /toggle light\/dark mode/i,
+    });
 
     // Initial: light mode
     expect(document.documentElement.getAttribute("data-theme")).toBeNull();
@@ -103,8 +108,11 @@ describe("Navbar", () => {
 
     expect(linkedinLink).toHaveAttribute(
       "href",
-      "https://uk.linkedin.com/in/olly-waldron-044b23223"
+      "https://uk.linkedin.com/in/olly-waldron-044b23223",
     );
-    expect(githubLink).toHaveAttribute("href", "https://github.com/ollywaldron23");
+    expect(githubLink).toHaveAttribute(
+      "href",
+      "https://github.com/ollywaldron23",
+    );
   });
 });

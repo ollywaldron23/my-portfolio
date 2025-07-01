@@ -12,8 +12,8 @@ export default function Contact() {
     e.preventDefault();
 
     if (form["bot-field"]) {
-    console.warn("Bot detected! Submission blocked."); // Prevent bot submissions
-    return;
+      console.warn("Bot detected! Submission blocked."); // Prevent bot submissions
+      return;
     }
 
     if (!form.name || !form.email || !form.message) {
@@ -21,9 +21,11 @@ export default function Contact() {
       return;
     }
 
-      // Name length check
+    // Name length check
     if (form.name.length > 40) {
-      alert("I dont think that's your real name. Please shorten it to 40 characters or less.");
+      alert(
+        "I dont think that's your real name. Please shorten it to 40 characters or less.",
+      );
       return;
     }
 
@@ -42,20 +44,22 @@ export default function Contact() {
     // Check for suspicious content (links, scripts, etc.)
     const suspiciousPattern = /(http|www\.|<script|<\/)/i;
     if (suspiciousPattern.test(form.message)) {
-      alert("Suspicious content detected in your message. Please remove links or scripts.");
+      alert(
+        "Suspicious content detected in your message. Please remove links or scripts.",
+      );
       return;
     }
 
     emailjs
       .send(
-        "service_n4ahd3h",      // service
-        "template_3cm6dan",  // template
+        "service_n4ahd3h", // service
+        "template_3cm6dan", // template
         {
           from_name: form.name,
           reply_to: form.email,
           message: form.message,
         },
-        "CUIw6rRtDqYpDCrzb"       // public
+        "CUIw6rRtDqYpDCrzb", // public
       )
       .then(() => {
         alert("Thanks for your message!");
