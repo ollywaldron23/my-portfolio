@@ -17,7 +17,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={robotoFlex.className}>
-        {children}
+        <div id="app">
+          {children}
+          <footer className="site-footer">
+            <p>© 2025 Oliver Waldron</p>
+          </footer>
+        </div>
       </body>
     </html>
   );

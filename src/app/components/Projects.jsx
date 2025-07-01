@@ -3,12 +3,9 @@ import { useState, useEffect } from "react";
 import {
   FaReact,
   FaNodeJs,
-  FaCss3Alt,
-  FaHtml5,
   FaGithub,
   FaPython,
   FaDatabase,
-  FaExternalLinkAlt,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -116,16 +113,6 @@ export default function Projects() {
               className="project-link"
             >
               <FaGithub /> GitHub
-            </a>
-          )}
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link"
-            >
-              <FaExternalLinkAlt /> Demo
             </a>
           )}
         </div>

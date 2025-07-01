@@ -16,6 +16,32 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.site-footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--foreground);
+  background-color: var(--background);
+  border-top: 1px solid rgba(100, 100, 100, 0.2);
+  font-family: 'Atma', monospace, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 *,
 *::before,
 *::after {
@@ -406,15 +432,9 @@ body {
   width: 100%;
   height: auto;
   border-radius: 6px;
-  cursor: pointer;
   object-fit: cover;
   transition: transform 0.2s ease;
   border: 1px solid var(--foreground);
-}
-
-.project-images img:hover {
-  transform: scale(1.05);
-  border-color: var(--link-hover);
 }
 
 .nav-button {
