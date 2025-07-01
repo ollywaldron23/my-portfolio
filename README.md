@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Portfolio
 
-## Getting Started
+A personal portfolio website built with Next.js featuring:
 
-First, run the development server:
+- Light/Dark mode toggle with CSS variables  
+- Google Fonts integration (Roboto Flex)  
+- Contact form with EmailJS  
+- Responsive design  
+- Tech stack icons with hover tooltips  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Note
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This project is deployed and maintained **only by me**.  
+If you clone or fork this repository, please understand that I **do not support or endorse deploying it yourself**.  
+Feel free to explore the code for learning and inspiration.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- Theme toggling based on user preference or manual switch  
+- Accessible and responsive navigation  
+- Contact form with client-side validation and spam protection  
+- Project showcase with image slider  
+- Footer with copyright info  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Local Development
 
-## Deploy on Vercel
+To run the project locally:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone the repo  
+   
+   git clone https://github.com/ollywaldron23/my-portfolio.git
+   cd my-portfolio
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Install dependencies:
+
+    npm install
+
+Run development server:
+
+    npm run dev
+
+Open http://localhost:3000 in your browser
+
+Environment Variables:
+
+Make sure to set up your EmailJS credentials in a .env.local file (or wherever you prefer):
+
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+
+## Tech Used
+
+Next.js
+React
+EmailJS
+CSS Variables for theming
+Google Fonts (Roboto Flex)
+License
+
+This repository is for personal portfolio purposes only.
+
+Thank you for stopping by!

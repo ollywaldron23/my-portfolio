@@ -36,14 +36,14 @@ export default function Contact() {
             // All validations passed, send the email
             emailjs
               .send(
-                "service_n4ahd3h", // service
-                "template_3cm6dan", // template
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, // service
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, // template
                 {
                   from_name: form.name,
                   reply_to: form.email,
                   message: form.message,
                 },
-                "CUIw6rRtDqYpDCrzb", // public
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY, // public
               )
               .then(() => {
                 alert("Thanks for your message!");
