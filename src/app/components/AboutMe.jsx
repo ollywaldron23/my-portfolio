@@ -1,8 +1,7 @@
 import React from "react";
 
 export default function AboutMe() {
-  const aboutText = `Hi, I'm Oliver Waldron, but you can call me Olly. I'm an aspiring software engineer with a passion for building web applications. I love coding and creating solutions that make people's lives easier. I've recently completed the Makers 14 week software engineering bootcamp, where I honed my skills in full-stack development. In my free time, I enjoy exploring new technologies and working on personal projects. I'm excited to share my journey with you!`;
-
+  
   return (
     <div className="about-container" role="region" aria-label="About Me">
       <div className="about-image-container"> 
