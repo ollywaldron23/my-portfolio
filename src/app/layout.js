@@ -12,7 +12,7 @@ export const metadata = {
   title: "My Portfolio",
   description: "Personal portfolio site",
   icons: {
-    icon: "/icon.png",  // <-- add your favicon path here
+    icon: "/icon.png", // <-- add your favicon path here
   },
 };
 

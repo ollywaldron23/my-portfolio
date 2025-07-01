@@ -16,7 +16,9 @@ export default function Contact() {
     } else if (!form.name || !form.email || !form.message) {
       alert("Please fill in all fields.");
     } else if (form.name.length > 40) {
-      alert("I don't think that's your real name. Please shorten it to 40 characters or less.");
+      alert(
+        "I don't think that's your real name. Please shorten it to 40 characters or less.",
+      );
     } else {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(form.email)) {
@@ -27,7 +29,9 @@ export default function Contact() {
         } else {
           const suspiciousPattern = /(http|www\.|<script|<\/)/i;
           if (suspiciousPattern.test(form.message)) {
-            alert("Suspicious content detected in your message. Please remove links or scripts.");
+            alert(
+              "Suspicious content detected in your message. Please remove links or scripts.",
+            );
           } else {
             // All validations passed, send the email
             emailjs
@@ -39,7 +43,7 @@ export default function Contact() {
                   reply_to: form.email,
                   message: form.message,
                 },
-                "CUIw6rRtDqYpDCrzb" // public
+                "CUIw6rRtDqYpDCrzb", // public
               )
               .then(() => {
                 alert("Thanks for your message!");
@@ -53,8 +57,8 @@ export default function Contact() {
         }
       }
     }
-  }
-  
+  };
+
   return (
     <div className="contact-container">
       <p>Please reach out at my links above, or via the form below.</p>
