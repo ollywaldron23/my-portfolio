@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import {
   FaReact,
   FaNodeJs,
@@ -21,7 +22,7 @@ const projects = [
   {
     title: "MakersBnB",
     description:
-      "An Airbnb clone built with Python, Flask, and PostgreSQL. Users can list properties, make booking requests, and manage availability.",
+      "Property rental platform using Python and Flask with PostgreSQL database. Built user authentication, property listings with image uploads, booking request system, and availability calendar management in a team environment.",
     github: "https://github.com/peternieuwkoop/makersbnb-python-seed-hunor",
     demo: "", // no demo link for this one
     date: "12/05/2025 - 16/05/2025",
@@ -36,7 +37,7 @@ const projects = [
   {
     title: "Acebook",
     description:
-      "A Facebook-style social media app using the MERN stack and Vite. Users can post, like, prod friends, and search for new friends. It features user authentication, real-time updates, and a responsive design.",
+      "Social media application using the MERN stack with Vite. Features user authentication, real-time news feed, post creation with likes, friend search and connections, and responsive design. Built collaboratively with focus on user experience.",
     github: "https://github.com/meg-atkinson/acebook-team-water",
     demo: "",
     date: "05/06/2025 - 16/06/2025",
@@ -46,7 +47,7 @@ const projects = [
   {
     title: "BanksyMap",
     description:
-      "A full-stack map app built with the MERN stack and Vite. It displays Banksy artworks in London on a custom map interface. Users can view details about each artwork, filter by themes and other criteria, report new artworks, track bookmarks and visits, and comment on pieces. The app features user authentication, a responsive design, and a modern UI.",
+      "Interactive map displaying Banksy street art locations across London. Built with MERN stack featuring custom map interface, advanced filtering by themes and criteria, user authentication, bookmark tracking, and community artwork submissions with comments.",
     github: "https://github.com/Nx-Makomva/banksy-map",
     demo: "", // no demo yet
     date: "19/06/2025 - 30/06/2025",
@@ -62,13 +63,18 @@ const projects = [
 
 export default function Projects() {
   const [selected, setSelected] = useState(0);
+  const [loaded, setLoaded] = useState(false); 
+
+  useEffect(() => {
+    setTimeout(() => setLoaded(true), 300);  // trigger fade-in after 300ms
+  }, []);
 
   const project = projects[selected];
 
   return (
     <div className="projects-container">
       {/* Left Side: Project Titles */}
-      <div className="project-list">
+      <div className={`project-list ${!loaded ? "fade-in" : ""}`}>
         {projects.map((p, i) => (
           <div
             key={i}
@@ -81,7 +87,7 @@ export default function Projects() {
       </div>
 
       {/* Right Side: Project Detail */}
-      <div className="project-detail">
+      <div className={`project-detail ${!loaded ? "fade-in" : ""}`}>
         <h2>{project.title}</h2>
         <p className="project-date">{project.date}</p>
         <p>{project.description}</p>
