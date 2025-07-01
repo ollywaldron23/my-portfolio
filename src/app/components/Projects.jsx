@@ -38,7 +38,7 @@ const projects = [
     github: "https://github.com/meg-atkinson/acebook-team-water",
     demo: "",
     date: "05/06/2025 - 16/06/2025",
-    images: ["/acebook1.png", "/acebook2.png", "/acebook3.png"],
+    images: ["/acebook1.png", "/acebook2.png", "/acebook3.png", "/acebook4.png"],
     tech: [<FaReact />, <SiExpress />, <FaNodeJs />, <SiMongodb />, <SiVite />],
   },
   {

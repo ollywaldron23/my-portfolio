@@ -63,7 +63,7 @@ describe("Contact Form", () => {
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
     expect(global.alert).toHaveBeenCalledWith(
-      "I dont think that's your real name. Please shorten it to 40 characters or less.",
+      "I don't think that's your real name. Please shorten it to 40 characters or less.",
     );
   });
 

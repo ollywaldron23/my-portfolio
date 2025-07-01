@@ -11,11 +11,18 @@ const robotoFlex = Roboto_Flex({
 export const metadata = {
   title: "My Portfolio",
   description: "Personal portfolio site",
+  icons: {
+    icon: "/icon.png",  // <-- add your favicon path here
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/icon.png" />
+        {/* You can add other icon sizes here */}
+      </head>
       <body className={robotoFlex.className}>
         <div id="app">
           {children}
