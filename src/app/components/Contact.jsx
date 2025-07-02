@@ -21,6 +21,7 @@ export default function Contact() {
       );
     } else {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
       if (!emailRegex.test(form.email)) {
         alert("Please enter a valid email address.");
       } else {
@@ -28,6 +29,7 @@ export default function Contact() {
           alert("Please shorten your message.");
         } else {
           const suspiciousPattern = /(http|www\.|<script|<\/)/i;
+          
           if (suspiciousPattern.test(form.message)) {
             alert(
               "Suspicious content detected in your message. Please remove links or scripts.",

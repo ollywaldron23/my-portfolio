@@ -1,8 +1,8 @@
 // tests/page.test.jsx
 import { render, screen, fireEvent } from "@testing-library/react";
-import Page from "../src/app/page";
+import Page from "../../../src/app/page";
 
-vi.mock("../src/app/components/Navbar", () => ({
+vi.mock("../../../src/app/components/Navbar", () => ({
   default: ({ selected, onSelect }) => (
     <nav>
       {["home", "about me", "projects", "contact"].map((item) => (
@@ -18,16 +18,16 @@ vi.mock("../src/app/components/Navbar", () => ({
   ),
 }));
 
-vi.mock("../src/app/components/Home", () => ({
+vi.mock("../../../src/app/components/Home", () => ({
   default: () => <div>Home Component</div>,
 }));
-vi.mock("../src/app/components/AboutMe", () => ({
+vi.mock("../../../src/app/components/AboutMe", () => ({
   default: () => <div>About Me Component</div>,
 }));
-vi.mock("../src/app/components/Projects", () => ({
+vi.mock("../../../src/app/components/Projects", () => ({
   default: () => <div>Projects Component</div>,
 }));
-vi.mock("../src/app/components/Contact", () => ({
+vi.mock("../../../src/app/components/Contact", () => ({
   default: () => <div>Contact Component</div>,
 }));
 

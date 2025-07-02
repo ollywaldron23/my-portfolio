@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import TypingEffect from "../src/app/components/TypingEffect";
+import TypingEffect from "../../../../src/app/components/TypingEffect";
 import { vi } from "vitest";
 import { act } from "react-dom/test-utils";
 

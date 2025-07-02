@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Navbar from "../src/app/components/Navbar";
+import Navbar from "../../../../src/app/components/Navbar";
 import { vi } from "vitest";
 
 describe("Navbar", () => {
