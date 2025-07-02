@@ -20,7 +20,7 @@ const projects = [
     title: "MakersBnB",
     description:
       "Property rental platform using Python and Flask with PostgreSQL database. Built user authentication, property listings with image uploads, booking request system, and availability calendar management in a team environment.",
-    github: "https://github.com/peternieuwkoop/makersbnb-python-seed-hunor",
+    github: "https://github.com/ollywaldron23/makersbnb-python",
     demo: "", // no demo link for this one
     date: "12/05/2025 - 16/05/2025",
     images: [
@@ -35,7 +35,7 @@ const projects = [
     title: "Acebook",
     description:
       "Social media application using the MERN stack with Vite. Features user authentication, real-time news feed, post creation with likes, friend search and connections, and responsive design. Built collaboratively with focus on user experience.",
-    github: "https://github.com/meg-atkinson/acebook-team-water",
+    github: "https://github.com/ollywaldron23/acebook-team-water",
     demo: "",
     date: "05/06/2025 - 16/06/2025",
     images: [
@@ -50,7 +50,7 @@ const projects = [
     title: "BanksyMap",
     description:
       "Interactive map displaying Banksy street art locations across London. Built with MERN stack featuring custom map interface, advanced filtering by themes and criteria, user authentication, bookmark tracking, and community artwork submissions with comments.",
-    github: "https://github.com/Nx-Makomva/banksy-map",
+    github: "https://github.com/ollywaldron23/banksy-map",
     demo: "", // no demo yet
     date: "19/06/2025 - 30/06/2025",
     images: [
