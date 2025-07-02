@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Home from "../components/Home";
+import Home from "../src/app/components/Home";
 
 describe("Home component", () => {
   test("renders TypingEffect with correct text and heading tag", () => {

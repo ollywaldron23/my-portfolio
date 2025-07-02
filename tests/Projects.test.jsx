@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import Projects from "../components/Projects";
+import Projects from "../src/app/components/Projects";
 import { describe, it, expect, vi } from "vitest";
 
 // Mock react-icons to simplify rendering

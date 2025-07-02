@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import AboutMe from "../components/AboutMe"; // Adjust import path
+import AboutMe from "../src/app/components/AboutMe"; // Adjust import path
 
 describe("AboutMe component", () => {
   test("renders main about container", () => {
