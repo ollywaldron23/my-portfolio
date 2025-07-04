@@ -535,17 +535,21 @@ main {
   }
 
   .project-list {
-    flex-direction: row;
-    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;       /* allow items to wrap to new lines */
+    justify-content: space-between; /* spread evenly */
+    gap: 1rem;             /* space between projects */
     min-width: auto;
   }
 
   .project-detail {
-    min-width: auto;
+    flex: 0 0 48%;         /* each project takes ~48% width */
     margin-top: 1rem;
+    box-sizing: border-box;
   }
 
   .slider-image {
     max-height: 200px;
   }
 }
+
