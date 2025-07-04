@@ -13,6 +13,8 @@ import {
   SiPostgresql,
   SiFlask,
   SiVite,
+  SiOpenai,
+  SiVitest,
 } from "react-icons/si";
 
 const projects = [
@@ -60,6 +62,21 @@ const projects = [
       "/banksymap4.png",
     ],
     tech: [<FaReact />, <SiExpress />, <FaNodeJs />, <SiMongodb />, <SiVite />],
+  },
+  {
+    title: "PitchFork",
+    description:
+      "PitchFork is a small creative web app that uses OpenAI to provide instant feedback on user-submitted ideas, simulating responses from two opposing personas—an encouraging Angel and a critical Devil. Built with React and styled for interactivity, it allows users to toggle between serious and joke modes for either constructive or humorous reviews. The interface reacts dynamically based on user input and hover behavior, creating a playful but functional way to test ideas. The project is fully tested with Vitest and Testing Library, ensuring stability across interactions.",
+    github: "https://github.com/ollywaldron23/PitchFork",
+    demo: "", // no demo yet
+    date: "02/07/2025 - 04/07/2025",
+    images: [
+      "/pitchfork1.png",
+      "/pitchfork2.png",
+      "/pitchfork3.png",
+      "/pitchfork4.png",
+    ],
+    tech: [<FaReact />, <SiVite />, <SiOpenai />, <SiVitest />],
   },
 ];
 
